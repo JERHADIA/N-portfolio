@@ -82,6 +82,7 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    position: relative;
 }
 
 .nav-link {
@@ -687,7 +688,7 @@ body {
 /* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 768px) {
     .nav-menu {
-        position: absolute;
+        position: fixed;
         top: 70px;
         left: 0;
         width: 100%;
@@ -698,12 +699,13 @@ body {
         gap: 0;
         list-style: none;
         padding: 1.5rem 0;
-        display: none;
-        transition: all 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
     }
 
     .nav-menu.active {
-        display: flex;
+        max-height: 400px;
     }
 
     .nav-menu li {
